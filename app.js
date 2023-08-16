@@ -1,6 +1,4 @@
-// const express = require('express');
-import express from "express";
-
+const express = require("express");
 const app = express();
 const PORT = 8000;
 
@@ -10,9 +8,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //router 분리
-// const userRouter = require('./routes/user');
-import userRouter from "./routes/user.js";
-app.use("/", userRouter);
+app.get("/", (req, res) => {
+  res.render("index");
+});
+const router = require("./routes");
+app.use("/visitor", router);
+
 //오류처리
 app.use("*", (req, res) => {
   res.render("404");
