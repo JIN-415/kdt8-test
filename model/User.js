@@ -1,10 +1,10 @@
-import mysql from 'mysql2/promise';
+import mysql from "mysql2/promise";
 
 const conn = mysql.createPool({
-  host: 'localhost',
-  user: 'user',
-  password: '1234',
-  database: 'kdt8',
+  host: "https://ap-northeast-2.console.aws.amazon.com/",
+  user: "user",
+  password: "1234",
+  database: "kdt8",
   port: 3306,
 });
 //createConnection: 단일 연결, 매번 연결이 필요할 때 마다 새로운 연결 생성
@@ -60,7 +60,7 @@ export const edit_profile = async (data) => {
 
 export const delete_profile = async (id) => {
   try {
-    const query = 'DELETE FROM user WHERE id =?';
+    const query = "DELETE FROM user WHERE id =?";
     const [rows] = await conn.query(query, [id]);
   } catch (error) {
     console.log(error);
