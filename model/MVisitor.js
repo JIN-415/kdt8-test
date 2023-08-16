@@ -2,9 +2,9 @@ const mysql = require("mysql");
 
 //mysql연결
 const conn = mysql.createConnection({
-  host: "127.0.0.1",
-  user: "user",
-  password: "1234",
+  host: "kdt8-test.chrjqfrpahdq.ap-northeast-2.rds.amazonaws.com",
+  user: "admin",
+  password: "12345678",
   database: "mvc",
   port: 3306,
 });
